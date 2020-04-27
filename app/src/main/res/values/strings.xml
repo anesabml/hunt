@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Hunt</string>
+
+    <!-- Fragment Titles -->
+    <string name="title_posts">Posts</string>
+    <string name="title_details">Details</string>
+
+    <!-- TabLayout items -->
+    <string name="popular">Popular</string>
+    <string name="newest">Newest</string>
+
+    <!-- Snackbar messages -->
+    <string name="error_authentication">Error authentication</string>
+    <string name="error_loading_posts">Sorry, Could not get posts</string>
+    <string name="error_loading_post_details">Sorry, Could not get post details</string>
+    <string name="success_authentication">Welcome back!</string>
+
+    <!-- Actions -->
+    <string name="button_retry">Retry</string>
+    <string name="button_upvote">Upvote (%d)</string>
+    <string name="button_get_it">Get It</string>
+
+    <!-- Content description -->
+    <string name="content_description_media">Product\'s Media</string>
+    <string name="content_description_thumbnail">Product\'s Thumbnail</string>
+    <string name="new_posts">New Posts</string>
+    <string name="new_posts_description">New featured posts</string>
+    <string name="product_of_the_day">Product of the day</string>
+    <string name="content_description_user_photo">User Photo</string>
+    <string name="comments">Comments</string>
+
+</resources>

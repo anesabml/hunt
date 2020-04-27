@@ -1,0 +1,14 @@
+query Viewer {
+    viewer {
+        user {
+            id
+            coverImage
+            headline
+            isMaker
+            isViewer
+            profileImage
+            username
+            name
+        }
+    }
+}

@@ -1,0 +1,21 @@
+query Posts($first: Int, $order: PostsOrder, $after: String) {
+    posts(first: $first, order: $order, after: $after) {
+         edges {
+           cursor
+           node {
+             id
+             name
+             tagline
+             createdAt
+             featuredAt
+             thumbnail {
+               type
+               url
+               videoUrl
+             }
+             votesCount
+             isVoted
+           }
+         }
+       }
+   }

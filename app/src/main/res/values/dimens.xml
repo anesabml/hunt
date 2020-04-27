@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="thumbnail_size">56dp</dimen>
+    <dimen name="icon_size">24dp</dimen>
+    <dimen name="card_corner_radius">8dp</dimen>
+    <dimen name="media_image_height">250dp</dimen>
+    <dimen name="user_photo_size">40dp</dimen>
+</resources>

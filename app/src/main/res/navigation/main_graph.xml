@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/posts_graph">
+
+    <navigation
+        android:id="@+id/posts_graph"
+        app:startDestination="@id/PostsFragment">
+        <fragment
+            android:id="@+id/PostsFragment"
+            android:name="com.anesabml.hunt.viewModel.posts.PostsFragment"
+            android:label="@string/title_posts"
+            tools:layout="@layout/fragment_posts">
+            <action
+                android:id="@+id/action_postsFragment_to_postDetailsFragment"
+                app:destination="@id/PostDetailsFragment" />
+            <argument
+                android:name="sort_by"
+                app:argType="string" />
+        </fragment>
+        <fragment
+            android:id="@+id/PostDetailsFragment"
+            android:name="com.anesabml.hunt.viewModel.postDetails.PostDetailsFragment"
+            android:label="@string/title_details"
+            tools:layout="@layout/fragment_post_details">
+            <argument
+                android:name="post"
+                app:argType="com.anesabml.hunt.model.Post" />
+        </fragment>
+    </navigation>
+</navigation>

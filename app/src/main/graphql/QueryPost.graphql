@@ -1,0 +1,55 @@
+query Post($id: ID) {
+    post(id: $id) {
+        id
+        name
+        description
+        createdAt
+        featuredAt
+        slug
+        tagline
+        productLinks{
+            type
+            url
+        }
+        thumbnail {
+            type
+            url
+            videoUrl
+        }
+        media {
+            type
+            url
+            videoUrl
+        }
+        isVoted
+        reviewsRating
+        reviewsCount
+        votesCount
+        commentsCount
+        isCollected
+        url
+        comments {
+            edges {
+                cursor
+                node {
+                    user {
+                        ...userInfo
+                    }
+                    ...commentInfo
+                }
+            }
+        }
+    }
+}
+
+fragment commentInfo on Comment {
+    body
+    createdAt
+    id
+}
+
+fragment userInfo on User {
+    name
+    profileImage
+    headline
+}
