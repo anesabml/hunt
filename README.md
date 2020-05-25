@@ -8,15 +8,27 @@ A simple product hunt client.
     <img src="metadata/screenshots/hunt_dark.png"/>
 </div>
 
-## Features 🎨
+## Motivation
 
-- **100% Kotlin-only template**.
-- 100% Gradle Kotlin DSL setup.
-- Dependency versions managed via `buildSrc`.
-- CI Setup with GitHub Actions.
-- Kotlin Static Analysis via `ktlint`.
-- Issues Template (bug report + feature request)
-- Pull Request Template.
+The focus of this project is to learn how to integrate OAuth and GraphQL, also how to use Dagger 2 for dependency injection.
+
+## Libraries Used
+
+- [**ApolloGraphQL**](https://github.com/apollographql/apollo-android/)
+- [**AssistedInject**](https://github.com/square/AssistedInject)
+- [**CircleImage**](https://github.com/hdodenhof/CircleImageView)
+- [**Coil**](https://github.com/coil-kt/coil)
+- [**Dagger2**](https://github.com/google/dagger)
+- [**KotlinCoroutines**](https://github.com/Kotlin/kotlinx.coroutines)
+- [**ViewBinding**](https://developer.android.com/topic/libraries/architecture)
+- [**Lifecycle**](https://developer.android.com/topic/libraries/architecture)
+- [**LiveData**](https://developer.android.com/topic/libraries/architecture)
+- [**Moshi**](https://github.com/square/moshi/)
+- [**mockk**](https://github.com/mockk/mockk)
+- [**Retrofit**](https://github.com/square/retrofit)
+- [**Timber**](https://github.com/JakeWharton/timber)
+- [**ViewModel**](https://developer.android.com/topic/libraries/architecture)
+- [**WorkManager**](https://developer.android.com/topic/libraries/architecture)
 
 ## Gradle Setup 🐘
 
@@ -26,16 +38,16 @@ Dependencies are centralized inside the [Dependencies.kt](buildSrc/src/main/java
 
 ## Static Analysis 🔍
 
-The project uses [**ktlint**](https://github.com/pinterest/ktlint) with the [ktlint-gradle](https://github.com/jlleitschuh/ktlint-gradle) plugin to format your code. To reformat all the source code as well as the buildscript you can run the `ktlintFormat` gradle task.
+The project uses [**ktlint**](https://github.com/pinterest/ktlint) with the [ktlint-gradle](https://github.com/jlleitschuh/ktlint-gradle) plugin to format your code.
 
 ## CI ⚙️
 
-This template is using [**GitHub Actions**](https://github.com/cortinico/kotlin-android-template/actions) as CI. You don't need to setup any external service and you should have a running CI once you start using this template.
+This template is using [**GitHub Actions**](https://github.com/cortinico/kotlin-android-template/actions) as CI.
 
 There are currently the following workflows available:
 
 - [Validate Gradle Wrapper](.github/workflows/gradle-wrapper-validation.yml) - Will check that the gradle wrapper has a valid checksum
-- [Pre Merge Checks](.github/workflows/build-and-check.yaml) - Will run the `build`, and `check` tasks.
+- [Pre Merge Checks](.github/workflows/build-and-check.yaml) - Will run the `build` task.
 
 ## Contributing 🤝
 
