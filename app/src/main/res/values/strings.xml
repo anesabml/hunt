@@ -28,5 +28,6 @@
     <string name="product_of_the_day">Product of the day</string>
     <string name="content_description_user_photo">User Photo</string>
     <string name="comments">Comments</string>
+    <string name="button_log_in">Log in</string>
 
 </resources>
