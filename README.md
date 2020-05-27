@@ -1,11 +1,12 @@
 # Product hunt client
 
-A simple product hunt client.
+Unofficial client for Product Hunt.
 
 ## Screenshots
 
 <div style="text-align:center">
     <img src="metadata/screenshots/hunt_dark.png"/>
+    <img src="metadata/screenshots/hunt_light.png"/>
 </div>
 
 ## Motivation
