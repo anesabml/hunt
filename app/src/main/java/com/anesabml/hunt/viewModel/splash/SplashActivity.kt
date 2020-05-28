@@ -70,6 +70,7 @@ class SplashActivity : AppCompatActivity() {
 
         val podRequest = PeriodicWorkRequestBuilder<PodNotificationWorker>(1, TimeUnit.DAYS)
             .setConstraints(constraints)
+            .setInitialDelay(1, TimeUnit.DAYS)
             .build()
 
         WorkManager.getInstance(this).enqueueUniquePeriodicWork(
