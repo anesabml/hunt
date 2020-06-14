@@ -1,9 +1,11 @@
 package com.anesabml.hunt.model
 
-import org.jetbrains.annotations.Nullable
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class Media(
     val type: String,
     val url: String,
-    val videoUrl: @Nullable String?
-)
+    val videoUrl: String?
+) : Parcelable

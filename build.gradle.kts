@@ -43,8 +43,9 @@ subprojects {
 
 buildscript {
     dependencies {
-        classpath("com.apollographql.apollo:apollo-gradle-plugin:${BuildPluginsVersion.APOLLO_PLUGIN}")
-        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:${BuildPluginsVersion.NAVIGATION_PLUGIN}")
+        classpath("com.apollographql.apollo:apollo-gradle-plugin:${Versions.APOLLO_GRAPHQL}")
+        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.NAVIGATION}")
+        classpath("com.google.dagger:hilt-android-gradle-plugin:${Versions.DAGGER_HILT}")
     }
 }
 

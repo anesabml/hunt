@@ -1,8 +1,10 @@
 package com.anesabml.hunt.model
 
+import android.os.Parcelable
 import com.anesabml.lib.recyclerView.Differentiable
-import java.io.Serializable
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class Post(
     val id: String,
     val name: String,
@@ -22,7 +24,7 @@ data class Post(
     val votesCount: Int,
     val commentsCount: Int?,
     val comments: List<CommentEdge>
-) : Differentiable, Serializable {
+) : Differentiable, Parcelable {
     override val diffId: String
         get() = id
 

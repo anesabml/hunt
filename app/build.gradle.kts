@@ -5,6 +5,7 @@ plugins {
     id("com.apollographql.apollo")
     kotlin("kapt")
     id("androidx.navigation.safeargs.kotlin")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -20,11 +21,8 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    viewBinding.isEnabled = true
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+    buildFeatures {
+        viewBinding = true
     }
 
     buildTypes {
@@ -40,6 +38,11 @@ android {
     lintOptions {
         isWarningsAsErrors = true
         isAbortOnError = false
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
 
     kotlinOptions {
@@ -62,10 +65,11 @@ dependencies {
     implementation(Libraries.MATERIAL)
     implementation(Libraries.COIL)
     implementation(Libraries.CIRCLE_IMAGE_VIEW)
-    implementation(Libraries.DAGGER)
-    kapt(Libraries.DAGGER_COMPLIER)
-    compileOnly(Libraries.ASSISTED_INJECT)
-    kapt(Libraries.ASSISTED_INJECT_PROCESSOR)
+    implementation(Libraries.DAGGER_HILT)
+    kapt(Libraries.DAGGER_HILT_COMPLIER)
+    implementation(Libraries.DAGGER_HILT_VIEWMODEL)
+    implementation(Libraries.DAGGER_HILT_WORKMANGER)
+    kapt(Libraries.DAGGER_HILT_JETPACK_COMPLIER)
     implementation(Libraries.NAVIGATION_FRAGMENT)
     implementation(Libraries.NAVIGATION_UI)
     implementation(Libraries.LIFECYCLE_LIVEDATA)

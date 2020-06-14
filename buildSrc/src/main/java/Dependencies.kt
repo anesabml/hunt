@@ -25,6 +25,8 @@ object Versions {
     const val LIFECYCLE = "2.3.0-alpha02"
     const val NAVIGATION = "2.3.0-alpha04"
     const val DAGGER = "2.27"
+    const val DAGGER_HILT = "2.28-alpha"
+    const val DAGGER_HILT_JETPACK = "1.0.0-alpha01"
     const val ASSISTED_INJECT = "0.5.2"
     const val OKHTTP = "4.3.1"
     const val RETROFIT = "2.7.1"
@@ -41,12 +43,10 @@ object Versions {
 }
 
 object BuildPluginsVersion {
-    const val AGP = "3.6.3"
+    const val AGP = "4.0.0"
     const val KOTLIN = "1.3.72"
     const val KTLINT = "9.2.1"
     const val VERSIONS_PLUGIN = "0.28.0"
-    const val APOLLO_PLUGIN = "2.0.0"
-    const val NAVIGATION_PLUGIN = "2.3.0-alpha04"
 }
 
 object SupportLibs {
@@ -100,6 +100,15 @@ object Libraries {
 
     const val DAGGER = "com.google.dagger:dagger:${Versions.DAGGER}"
     const val DAGGER_COMPLIER = "com.google.dagger:dagger-compiler:${Versions.DAGGER}"
+
+    const val DAGGER_HILT = "com.google.dagger:hilt-android:${Versions.DAGGER_HILT}"
+    const val DAGGER_HILT_COMPLIER =
+        "com.google.dagger:hilt-android-compiler:${Versions.DAGGER_HILT}"
+    const val DAGGER_HILT_VIEWMODEL =
+        "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.DAGGER_HILT_JETPACK}"
+    const val DAGGER_HILT_WORKMANGER = "androidx.hilt:hilt-work:${Versions.DAGGER_HILT_JETPACK}"
+    const val DAGGER_HILT_JETPACK_COMPLIER =
+        "androidx.hilt:hilt-compiler:${Versions.DAGGER_HILT_JETPACK}"
 
     const val ASSISTED_INJECT =
         "com.squareup.inject:assisted-inject-annotations-dagger2:${Versions.ASSISTED_INJECT}"

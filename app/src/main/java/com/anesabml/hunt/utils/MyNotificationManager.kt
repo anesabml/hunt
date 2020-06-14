@@ -10,7 +10,7 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.anesabml.hunt.R
 import com.anesabml.hunt.model.Post
-import com.anesabml.hunt.viewModel.main.MainActivity
+import com.anesabml.hunt.ui.main.MainActivity
 import javax.inject.Inject
 
 class MyNotificationManager @Inject constructor(private val context: Context) {

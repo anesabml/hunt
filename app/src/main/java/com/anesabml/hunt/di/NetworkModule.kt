@@ -1,9 +1,10 @@
 package com.anesabml.hunt.di
 
-import android.content.Context
+import android.app.Application
 import com.anesabml.hunt.BuildConfig
 import com.anesabml.hunt.api.ApiService
 import com.anesabml.hunt.utils.Constant
+import com.anesabml.hunt.utils.SharedPref
 import com.apollographql.apollo.ApolloClient
 import com.apollographql.apollo.api.Operation
 import com.apollographql.apollo.api.ResponseField
@@ -13,24 +14,25 @@ import com.apollographql.apollo.cache.normalized.sql.SqlNormalizedCacheFactory
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import dagger.Module
 import dagger.Provides
-import javax.inject.Named
-import javax.inject.Singleton
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ApplicationComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import javax.inject.Singleton
 
 @Module
+@InstallIn(ApplicationComponent::class)
 object NetworkModule {
 
     @Singleton
     @Provides
-    @JvmStatic
-    fun provideApolloClient(context: Context, @Named("token") token: String): ApolloClient {
+    fun provideApolloClient(application: Application, sharedPref: SharedPref): ApolloClient {
         // Create NormalizedCacheFactory
         // Please note that if null is passed in as the name, you will get an in-memory SQLite database that
         // will not persist across restarts of the app.
-        val cacheFactory = SqlNormalizedCacheFactory(context, "hunt_cache")
+        val cacheFactory = SqlNormalizedCacheFactory(application, "hunt_cache")
         val resolver: CacheKeyResolver = object : CacheKeyResolver() {
             override fun fromFieldRecordSet(
                 field: ResponseField,
@@ -51,6 +53,9 @@ object NetworkModule {
                 else -> CacheKey.from(id)
             }
         }
+
+        val token = if (sharedPref.token.isNotBlank()) sharedPref.token else Constant.TOKEN
+
         return ApolloClient.builder()
             .serverUrl(Constant.GRAPHQL_API)
             .normalizedCache(cacheFactory, resolver)
@@ -81,7 +86,6 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    @JvmStatic
     fun provideApiService(): ApiService {
         val okHttpClient = httpClient()
         return Retrofit.Builder()

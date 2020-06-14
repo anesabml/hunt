@@ -1,14 +1,13 @@
 package com.anesabml.hunt.utils
 
+import android.app.Application
 import android.content.Context
 import androidx.core.content.edit
 import javax.inject.Inject
-import javax.inject.Singleton
 
-@Singleton
-class SharedPref @Inject constructor(context: Context) {
+class SharedPref @Inject constructor(application: Application) {
 
-    private val sharedPreference = context.getSharedPreferences("sh_pr", Context.MODE_PRIVATE)
+    private val sharedPreference = application.getSharedPreferences("sh_pr", Context.MODE_PRIVATE)
 
     var token: String = ""
         set(value) {

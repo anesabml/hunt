@@ -14,11 +14,11 @@ import com.anesabml.lib.network.Result
 import com.apollographql.apollo.ApolloClient
 import com.apollographql.apollo.coroutines.toDeferred
 import com.apollographql.apollo.exception.ApolloException
-import javax.inject.Inject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import timber.log.Timber
 import type.PostsOrder
+import javax.inject.Inject
 
 class PostsDataSource @Inject constructor(private val apolloClient: ApolloClient) {
 
@@ -86,8 +86,8 @@ class PostsDataSource @Inject constructor(private val apolloClient: ApolloClient
                     .first(1)
                     .order(PostsOrder.RANKING)
                     .build()
-            val response = apolloClient.query(postsQuery).toDeferred().await()
 
+            val response = apolloClient.query(postsQuery).toDeferred().await()
             val data = response.data?.posts() ?: throw IllegalStateException("Response was null")
             val post = data.edges().first().toPostEdge().node
             Result.Success(post)

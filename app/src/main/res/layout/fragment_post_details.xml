@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".viewModel.postDetails.PostDetailsFragment">
+    tools:context=".ui.postDetails.PostDetailsFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
