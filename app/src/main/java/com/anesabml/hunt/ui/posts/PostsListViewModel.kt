@@ -2,21 +2,24 @@ package com.anesabml.hunt.ui.posts
 
 import androidx.hilt.Assisted
 import androidx.hilt.lifecycle.ViewModelInject
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.switchMap
 import androidx.lifecycle.viewModelScope
-import androidx.paging.PagedList
+import androidx.paging.PagingData
+import androidx.paging.cachedIn
+import androidx.paging.insertSeparators
 import com.anesabml.hunt.data.repository.PostsRepository
-import com.anesabml.hunt.model.Listing
-import com.anesabml.hunt.model.PostEdge
+import com.anesabml.hunt.model.Post
+import com.anesabml.hunt.model.PostUiModel
 import com.anesabml.hunt.ui.posts.PostsListFragment.Companion.ARG_SORT_BY
-import com.anesabml.hunt.utils.DefaultDispatcherProvider
-import com.anesabml.hunt.utils.DispatcherProvider
-import com.anesabml.lib.network.Result
-import kotlinx.coroutines.launch
+import com.anesabml.hunt.utils.DateUtils
+import com.anesabml.lib.utils.DefaultDispatcherProvider
+import com.anesabml.lib.utils.DispatcherProvider
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.map
+import java.util.Calendar
+import java.util.Locale
 
 class PostsListViewModel @ViewModelInject constructor(
     @Assisted private val savedStateHandle: SavedStateHandle,
@@ -25,33 +28,45 @@ class PostsListViewModel @ViewModelInject constructor(
 ) : ViewModel() {
 
     companion object {
-        private const val PAGE_SIZE = 30
+        private const val PAGE_SIZE = 10
     }
 
     private val sortBy = savedStateHandle.getLiveData<String>(ARG_SORT_BY)
 
-    private val repoResult: MutableLiveData<Listing<PostEdge>> = MutableLiveData()
+    val postsPagingFlow: Flow<PagingData<PostUiModel>> =
+        postsRepository.getPostsStream(pageSize = PAGE_SIZE, sortBy = sortBy.value ?: "")
+            .map { pagingData ->
+                pagingData.map { PostUiModel.PostItem(it.node) }
+            }
+            .map { pagingData ->
+                pagingData.insertSeparators { before, after ->
+                    when {
+                        before == null -> after?.post?.getDisplayDayOfWeek()?.let {
+                            PostUiModel.SeparatorItem(it)
+                        }
+                        after == null -> null
+                        shouldSeparate(before, after) -> after.post.getDisplayDayOfWeek()?.let {
+                            PostUiModel.SeparatorItem(it)
+                        }
+                        else -> null
+                    }
+                }
+            }
+            .flowOn(dispatcherProvider.io()).cachedIn(viewModelScope)
 
-    val posts: LiveData<PagedList<PostEdge>> = repoResult.switchMap { it.pagedList }
-    val results: LiveData<Result<Unit>> = repoResult.switchMap { it.networkState }
-    val refreshState: LiveData<Result<Unit>> = repoResult.switchMap { it.refreshState }
+    private fun shouldSeparate(
+        before: PostUiModel.PostItem,
+        after: PostUiModel.PostItem
+    ): Boolean =
+        before.post.getDayOfWeek() != after.post.getDayOfWeek()
 
-    init {
-        getPosts()
-    }
-
-    private fun getPosts() {
-        viewModelScope.launch(dispatcherProvider.io()) {
-            val result = postsRepository.getPosts(sortBy.value!!, PAGE_SIZE)
-            repoResult.postValue(result)
-        }
-    }
-
-    fun refresh() {
-        repoResult.value?.refresh?.invoke()
-    }
-
-    fun retry() {
-        repoResult.value?.retry?.invoke()
-    }
 }
+
+private fun Post.getDayOfWeek() =
+    DateUtils.stringDateToCalendar(featuredAt ?: createdAt)
+        .get(Calendar.DAY_OF_WEEK)
+
+private fun Post.getDisplayDayOfWeek() =
+    DateUtils.stringDateToCalendar(featuredAt ?: createdAt)
+        .getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, Locale.getDefault())
+

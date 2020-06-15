@@ -6,7 +6,7 @@ import coil.api.load
 import coil.transform.RoundedCornersTransformation
 import com.anesabml.hunt.R
 import com.anesabml.hunt.databinding.ItemPostBinding
-import com.anesabml.hunt.model.PostEdge
+import com.anesabml.hunt.model.Post
 import com.anesabml.hunt.ui.posts.PostsListInteractions
 
 class PostItemViewHolder(
@@ -14,10 +14,9 @@ class PostItemViewHolder(
 ) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(
-        postsListInteractions: PostsListInteractions,
-        postEdge: PostEdge
+        post: Post,
+        postsListInteractions: PostsListInteractions
     ) {
-        val post = postEdge.node
         with(binding) {
             thumbnail.load(post.thumbnail?.url) {
                 crossfade(true)

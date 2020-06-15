@@ -6,10 +6,9 @@
     android:layout_height="48dp">
 
     <TextView
-        android:id="@+id/header_text_view"
+        android:id="@+id/description"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginBottom="10dp"
+        android:layout_height="match_parent"
         android:background="@color/cardViewBackground"
         android:gravity="center_vertical"
         android:paddingStart="16dp"
@@ -19,4 +18,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@tools:sample/date/day_of_week" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

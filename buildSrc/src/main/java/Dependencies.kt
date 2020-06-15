@@ -30,7 +30,7 @@ object Versions {
     const val RETROFIT = "2.7.1"
     const val RETROFIT_COROUTINES = "0.9.2"
     const val MOSHI = "1.9.2"
-    const val PAGING = "2.1.2"
+    const val PAGING = "3.0.0-alpha01"
     const val TIMBER = "4.7.1"
     const val CIRCLE_IMAGE = "3.1.0"
     const val MOCKK = "1.10.0"
@@ -118,7 +118,7 @@ object Libraries {
     const val MOSHI = "com.squareup.moshi:moshi:${Versions.MOSHI}"
     const val MOSHI_CODEGEN = "com.squareup.moshi:moshi-kotlin-codegen:${Versions.MOSHI}"
 
-    const val PAGING = "androidx.paging:paging-runtime-ktx:${Versions.PAGING}"
+    const val PAGING = "androidx.paging:paging-runtime:${Versions.PAGING}"
 
     const val TIMBER = "com.jakewharton.timber:timber:${Versions.TIMBER}"
 
@@ -133,7 +133,7 @@ object TestingLib {
     const val MOCKK = "io.mockk:mockk:${Versions.MOCKK}"
     const val KOTLIN_COROUTINE_TEST =
         "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.KOTLIN_COROUTINES}"
-    const val PAGING = "androidx.paging:paging-common-ktx:${Versions.PAGING}"
+    const val PAGING = "androidx.paging:paging-common:${Versions.PAGING}"
 
     // Test helpers for LiveData
     const val ANDROIDX_ARCH_CORE = "androidx.arch.core:core-testing:${Versions.ANDROIDX_ARCH_CORE}"

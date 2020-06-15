@@ -1,4 +1,4 @@
-package com.anesabml.hunt.utils
+package com.anesabml.lib.utils
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers

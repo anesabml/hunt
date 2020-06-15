@@ -1,7 +1,7 @@
 package com.anesabml.hunt.di
 
-import com.anesabml.hunt.utils.DefaultDispatcherProvider
-import com.anesabml.hunt.utils.DispatcherProvider
+import com.anesabml.lib.utils.DefaultDispatcherProvider
+import com.anesabml.lib.utils.DispatcherProvider
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -12,5 +12,6 @@ import dagger.hilt.android.components.ApplicationComponent
 object DispatcherModule {
 
     @Provides
-    fun provideDispatcherProvider(): DispatcherProvider = DefaultDispatcherProvider()
+    fun provideDispatcherProvider(): DispatcherProvider =
+        DefaultDispatcherProvider()
 }

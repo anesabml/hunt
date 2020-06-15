@@ -10,8 +10,8 @@ import androidx.lifecycle.switchMap
 import androidx.lifecycle.viewModelScope
 import com.anesabml.hunt.data.repository.PostsRepository
 import com.anesabml.hunt.model.Post
-import com.anesabml.hunt.utils.DefaultDispatcherProvider
-import com.anesabml.hunt.utils.DispatcherProvider
+import com.anesabml.lib.utils.DefaultDispatcherProvider
+import com.anesabml.lib.utils.DispatcherProvider
 import com.anesabml.lib.network.Result
 
 class PostDetailsViewModel @ViewModelInject constructor(

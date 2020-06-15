@@ -4,17 +4,19 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.observe
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
+import androidx.paging.LoadState
 import com.anesabml.hunt.R
 import com.anesabml.hunt.databinding.FragmentPostsListBinding
 import com.anesabml.hunt.model.Post
 import com.anesabml.hunt.ui.posts.adapter.PostsListRecyclerViewAdapter
-import com.anesabml.hunt.ui.posts.adapter.StickyHeaderDecoration
+import com.anesabml.hunt.ui.posts.adapter.PostsLoadStateAdapter
 import com.anesabml.lib.extension.viewBinding
-import com.anesabml.lib.network.Result
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class PostsListFragment : Fragment(R.layout.fragment_posts_list), PostsListInteractions {
@@ -39,38 +41,27 @@ class PostsListFragment : Fragment(R.layout.fragment_posts_list), PostsListInter
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setupRecyclerView()
-        setupSwipeRefresh()
-    }
+        _adapter = PostsListRecyclerViewAdapter(this@PostsListFragment)
+        _adapter.withLoadStateFooter(PostsLoadStateAdapter(_adapter::retry))
 
-    private fun setupSwipeRefresh() {
+        // Setup the RecyclerView
+        binding.postsRecyclerView.adapter = _adapter
+
+        // Setup the SwipeRefresh callback
         binding.swipeRefresh.setOnRefreshListener {
-            viewModel.refresh()
+            _adapter.refresh()
         }
 
-        viewModel.refreshState.observe(viewLifecycleOwner) {
-            binding.swipeRefresh.isRefreshing = (it == Result.Loading)
-        }
-    }
-
-    private fun setupRecyclerView() {
-        with(binding.postsRecyclerView) {
-            _adapter =
-                PostsListRecyclerViewAdapter(this@PostsListFragment) {
-                    viewModel.retry()
-                }
-            adapter = _adapter
-            addItemDecoration(
-                StickyHeaderDecoration(
-                    _adapter
-                )
-            )
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.postsPagingFlow.collectLatest { pagingData ->
+                _adapter.submitData(pagingData)
+            }
         }
 
-        viewModel.posts.observe(viewLifecycleOwner) { _adapter.submitList(it) }
-
-        viewModel.results.observe(viewLifecycleOwner) {
-            _adapter.setNetworkState(it)
+        viewLifecycleOwner.lifecycleScope.launch {
+            _adapter.loadStateFlow.collectLatest { loadState ->
+                binding.swipeRefresh.isRefreshing = loadState.refresh is LoadState.Loading
+            }
         }
     }
 

@@ -2,12 +2,8 @@ package com.anesabml.hunt.data.dataSource
 
 import PostQuery
 import PostsQuery
-import androidx.lifecycle.switchMap
-import androidx.paging.Config
-import androidx.paging.toLiveData
 import com.anesabml.hunt.extension.toPost
 import com.anesabml.hunt.extension.toPostEdge
-import com.anesabml.hunt.model.Listing
 import com.anesabml.hunt.model.Post
 import com.anesabml.hunt.model.PostEdge
 import com.anesabml.lib.network.Result
@@ -22,42 +18,18 @@ import javax.inject.Inject
 
 class PostsDataSource @Inject constructor(private val apolloClient: ApolloClient) {
 
-    fun getPosts(sortBy: String, pageSize: Int): Listing<PostEdge> {
-        val sourceFactory =
-            PostsDataSourceFactory(
-                apolloClient,
-                sortBy
-            )
+    suspend fun getPosts(sortBy: PostsOrder, pageSize: Int, key: String?): List<PostEdge> {
 
-        // We use toLiveData Kotlin ext. function here, you could also use LivePagedListBuilder
-        val livePagedList = sourceFactory.toLiveData(
-            // we use Config Kotlin ext. function here, could also use PagedList.Config.Builder
-            config = Config(
-                pageSize = pageSize,
-                enablePlaceholders = false,
-                initialLoadSizeHint = pageSize * 2
-            )
-            // provide custom executor for network requests, otherwise it will default to
-            // Arch Components' IO pool which is also used for disk access
-//            fetchExecutor = networkExecutor
-        )
+        val postsQuery =
+            PostsQuery.builder()
+                .first(pageSize)
+                .order(sortBy)
+                .after(key)
+                .build()
 
-        val refreshState = sourceFactory.sourceLiveData.switchMap {
-            it.initialLoad
-        }
-        return Listing(
-            pagedList = livePagedList,
-            networkState = sourceFactory.sourceLiveData.switchMap {
-                it.networkState
-            },
-            retry = {
-                sourceFactory.sourceLiveData.value?.retryAllFailed()
-            },
-            refresh = {
-                sourceFactory.sourceLiveData.value?.invalidate()
-            },
-            refreshState = refreshState
-        )
+        val response = apolloClient.query(postsQuery).toDeferred().await()
+        val data = response.data ?: throw IllegalStateException("Response was null")
+        return data.posts().edges().map { it.toPostEdge() }
     }
 
     fun getPostDetails(id: String): Flow<Result<Post>> {

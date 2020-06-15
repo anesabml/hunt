@@ -1,6 +1,6 @@
 package com.anesabml.hunt
 
-import com.anesabml.hunt.utils.DispatcherProvider
+import com.anesabml.lib.utils.DispatcherProvider
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -14,7 +14,8 @@ import org.junit.runner.Description
 class CoroutineTestRule(val testCoroutineDispatcher: TestCoroutineDispatcher = TestCoroutineDispatcher()) :
     TestWatcher() {
 
-    val testDispatcherProvider = object : DispatcherProvider {
+    val testDispatcherProvider = object :
+        DispatcherProvider {
         override fun default(): CoroutineDispatcher = testCoroutineDispatcher
         override fun io(): CoroutineDispatcher = testCoroutineDispatcher
         override fun main(): CoroutineDispatcher = testCoroutineDispatcher
