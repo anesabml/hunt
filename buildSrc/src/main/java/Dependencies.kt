@@ -24,10 +24,8 @@ object Versions {
     const val KTLINT = "0.36.0"
     const val LIFECYCLE = "2.3.0-alpha02"
     const val NAVIGATION = "2.3.0-alpha04"
-    const val DAGGER = "2.27"
     const val DAGGER_HILT = "2.28-alpha"
     const val DAGGER_HILT_JETPACK = "1.0.0-alpha01"
-    const val ASSISTED_INJECT = "0.5.2"
     const val OKHTTP = "4.3.1"
     const val RETROFIT = "2.7.1"
     const val RETROFIT_COROUTINES = "0.9.2"
@@ -98,9 +96,6 @@ object Libraries {
     const val NAVIGATION_SAFE_ARGS =
         "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.NAVIGATION}"
 
-    const val DAGGER = "com.google.dagger:dagger:${Versions.DAGGER}"
-    const val DAGGER_COMPLIER = "com.google.dagger:dagger-compiler:${Versions.DAGGER}"
-
     const val DAGGER_HILT = "com.google.dagger:hilt-android:${Versions.DAGGER_HILT}"
     const val DAGGER_HILT_COMPLIER =
         "com.google.dagger:hilt-android-compiler:${Versions.DAGGER_HILT}"
@@ -110,17 +105,10 @@ object Libraries {
     const val DAGGER_HILT_JETPACK_COMPLIER =
         "androidx.hilt:hilt-compiler:${Versions.DAGGER_HILT_JETPACK}"
 
-    const val ASSISTED_INJECT =
-        "com.squareup.inject:assisted-inject-annotations-dagger2:${Versions.ASSISTED_INJECT}"
-    const val ASSISTED_INJECT_PROCESSOR =
-        "com.squareup.inject:assisted-inject-processor-dagger2:${Versions.ASSISTED_INJECT}"
-
-    // OKHTTP
     const val OKHTTP = "com.squareup.okhttp3:okhttp:${Versions.OKHTTP}"
     const val OKHTTP_LOGGING_INTERCEPTOR =
         "com.squareup.okhttp3:logging-interceptor:${Versions.OKHTTP}"
 
-    // RETROFIT
     const val RETROFIT = "com.squareup.retrofit2:retrofit:${Versions.RETROFIT}"
     const val RETROFIT_MOSHI_CONVERTER =
         "com.squareup.retrofit2:converter-moshi:${Versions.RETROFIT}"
