@@ -16,18 +16,17 @@ The focus of this project is to learn how to integrate OAuth and GraphQL, also h
 ## Libraries Used
 
 - [**ApolloGraphQL**](https://github.com/apollographql/apollo-android/)
-- [**AssistedInject**](https://github.com/square/AssistedInject)
 - [**CircleImage**](https://github.com/hdodenhof/CircleImageView)
 - [**Coil**](https://github.com/coil-kt/coil)
-- [**Dagger2**](https://github.com/google/dagger)
+- [**Dagger Hilt**](https://dagger.dev/hilt/)
 - [**KotlinCoroutines**](https://github.com/Kotlin/kotlinx.coroutines)
-- [**ViewBinding**](https://developer.android.com/topic/libraries/architecture)
 - [**Lifecycle**](https://developer.android.com/topic/libraries/architecture)
 - [**LiveData**](https://developer.android.com/topic/libraries/architecture)
 - [**Moshi**](https://github.com/square/moshi/)
 - [**mockk**](https://github.com/mockk/mockk)
 - [**Retrofit**](https://github.com/square/retrofit)
 - [**Timber**](https://github.com/JakeWharton/timber)
+- [**ViewBinding**](https://developer.android.com/topic/libraries/architecture)
 - [**ViewModel**](https://developer.android.com/topic/libraries/architecture)
 - [**WorkManager**](https://developer.android.com/topic/libraries/architecture)
 
