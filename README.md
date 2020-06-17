@@ -46,8 +46,9 @@ This template is using [**GitHub Actions**](https://github.com/cortinico/kotlin-
 
 There are currently the following workflows available:
 
-- [Validate Gradle Wrapper](.github/workflows/gradle-wrapper-validation.yml) - Will check that the gradle wrapper has a valid checksum
-- [Pre Merge Checks](.github/workflows/build-and-deploy.yaml) - Will run the `build` task.
+- [Validate Gradle Wrapper](.github/workflows/gradle-wrapper-validation.yml) - Will check that the gradle wrapper has a valid checksum.
+- [Build and check](.github/workflows/build-and-check.yaml) - Will run the `build` and `check` task.
+- [Deploy staging](.github/workflows/deploy-staging.yaml) - Will deploy the app to Google play.
 
 ## Contributing 🤝
 

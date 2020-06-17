@@ -12,8 +12,6 @@ import com.apollographql.apollo.ApolloClient
 import com.apollographql.apollo.api.Input
 import com.apollographql.apollo.coroutines.toDeferred
 import com.apollographql.apollo.exception.ApolloException
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -28,21 +26,19 @@ class PostsDataSource @Inject constructor(private val apolloClient: ApolloClient
         return data.posts.edges.map { it.toPostEdge() }
     }
 
-    fun getPostDetails(id: String): Flow<Result<Post>> {
-        return flow {
-            try {
-                emit(Result.Loading)
-                val postQuery = PostQuery(Input.optional(id))
-                val response = apolloClient.query(postQuery).toDeferred().await()
-                val post = response.data?.post?.toPost() ?: throw IllegalStateException("Response was null")
-                emit(Result.Success(post))
-            } catch (exception: ApolloException) {
-                Timber.e(exception)
-                emit(Result.Error(exception))
-            } catch (exception: IllegalStateException) {
-                Timber.e(exception)
-                emit(Result.Error(exception))
-            }
+    suspend fun getPostDetails(id: String): Result<Post> {
+        return try {
+            val postQuery = PostQuery(Input.optional(id))
+            val response = apolloClient.query(postQuery).toDeferred().await()
+            val post =
+                response.data?.post?.toPost() ?: throw IllegalStateException("Response was null")
+            Result.Success(post)
+        } catch (exception: ApolloException) {
+            Timber.e(exception)
+            Result.Error(exception)
+        } catch (exception: IllegalStateException) {
+            Timber.e(exception)
+            Result.Error(exception)
         }
     }
 

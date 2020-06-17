@@ -33,15 +33,13 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.anesabml.hunt.ui.splash.SplashActivity">
+        <activity android:name="com.anesabml.hunt.ui.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name="com.anesabml.hunt.ui.main.MainActivity" />
 
         <provider
             android:name="androidx.work.impl.WorkManagerInitializer"

@@ -22,7 +22,7 @@ class PostsRepository @Inject constructor(
             PostsPagingSource(dataSource, sortBy)
         }.flow
 
-    fun getPostDetails(id: String): Flow<Result<Post>> =
+    suspend fun getPostDetails(id: String): Result<Post> =
         dataSource.getPostDetails(id)
 
     suspend fun getProductOfTheDay(): Result<Post> =

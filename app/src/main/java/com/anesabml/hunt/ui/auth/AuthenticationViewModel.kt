@@ -9,10 +9,10 @@ import androidx.lifecycle.viewModelScope
 import com.anesabml.hunt.data.repository.AuthenticationRepository
 import com.anesabml.hunt.model.Token
 import com.anesabml.hunt.utils.Constant
-import com.anesabml.lib.utils.DefaultDispatcherProvider
-import com.anesabml.lib.utils.DispatcherProvider
 import com.anesabml.lib.extension.asLiveData
 import com.anesabml.lib.network.Result
+import com.anesabml.lib.utils.DefaultDispatcherProvider
+import com.anesabml.lib.utils.DispatcherProvider
 import kotlinx.coroutines.launch
 
 class AuthenticationViewModel @ViewModelInject constructor(

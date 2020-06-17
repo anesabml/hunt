@@ -2,6 +2,7 @@
     <string name="app_name">Hunt</string>
 
     <!-- Fragment Titles -->
+    <string name="title_loading">Loading</string>
     <string name="title_posts">Posts</string>
     <string name="title_details">Details</string>
 

@@ -1,4 +1,4 @@
-package com.anesabml.hunt.ui.splash
+package com.anesabml.hunt.ui.main
 
 import androidx.hilt.Assisted
 import androidx.hilt.lifecycle.ViewModelInject
@@ -13,7 +13,7 @@ import com.anesabml.lib.network.Result
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class SplashViewModel @ViewModelInject constructor(
+class MainViewModel @ViewModelInject constructor(
     @Assisted private val savedStateHandle: SavedStateHandle,
     private val authenticationRepository: AuthenticationRepository
 ) : ViewModel() {

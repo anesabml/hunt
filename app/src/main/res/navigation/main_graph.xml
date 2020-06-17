@@ -3,7 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph"
-    app:startDestination="@id/posts_graph">
+    app:startDestination="@id/LoadingFragment">
+
+    <fragment
+        android:id="@+id/LoadingFragment"
+        android:name="com.anesabml.hunt.ui.loading.LoadingFragment"
+        android:label="@string/title_loading"
+        tools:layout="@layout/fragment_loading" />
 
     <navigation
         android:id="@+id/posts_graph"

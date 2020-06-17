@@ -52,8 +52,8 @@ class AuthenticationViewModelTest {
         SUT.handleAuthorizationCode("")
 
         // Then
-        val tokenModel = SUT.result.getOrAwaitValue()
+        val actual = SUT.result.getOrAwaitValue()
 
-        assertThat(tokenModel).isEqualTo(Result.Success(expectedToken))
+        assertThat(actual).isEqualTo(Result.Success(expectedToken))
     }
 }

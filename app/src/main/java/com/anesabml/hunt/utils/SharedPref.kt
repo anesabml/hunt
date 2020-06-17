@@ -2,7 +2,6 @@ package com.anesabml.hunt.utils
 
 import android.app.Application
 import android.content.Context
-import androidx.core.content.edit
 import javax.inject.Inject
 
 class SharedPref @Inject constructor(application: Application) {
@@ -15,13 +14,4 @@ class SharedPref @Inject constructor(application: Application) {
             field = value
         }
         get() = sharedPreference.getString("token", "")!!
-
-    var shouldSetupPodWorker: Boolean = true
-        set(value) {
-            sharedPreference.edit {
-                putBoolean("should_setup_pod_worker", value)
-            }
-            field = value
-        }
-        get() = sharedPreference.getBoolean("should_setup_pod_worker", true)
 }
