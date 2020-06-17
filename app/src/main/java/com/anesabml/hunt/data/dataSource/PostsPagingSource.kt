@@ -2,8 +2,8 @@ package com.anesabml.hunt.data.dataSource
 
 import androidx.paging.PagingSource
 import com.anesabml.hunt.model.PostEdge
+import com.anesabml.hunt.type.PostsOrder
 import com.apollographql.apollo.exception.ApolloException
-import type.PostsOrder
 import java.io.IOException
 
 class PostsPagingSource(

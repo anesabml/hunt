@@ -8,6 +8,10 @@ plugins {
     id("dagger.hilt.android.plugin")
 }
 
+apollo {
+    generateKotlinModels.set(true)
+}
+
 android {
     compileSdkVersion(Sdk.COMPILE_SDK_VERSION)
 
