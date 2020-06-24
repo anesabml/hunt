@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/LoadingFragment"
-        android:name="com.anesabml.hunt.ui.loading.LoadingFragment"
+        android:name="com.anesabml.producthunt.ui.loading.LoadingFragment"
         android:label="@string/title_loading"
         tools:layout="@layout/fragment_loading" />
 
@@ -16,7 +16,7 @@
         app:startDestination="@id/PostsFragment">
         <fragment
             android:id="@+id/PostsFragment"
-            android:name="com.anesabml.hunt.ui.posts.PostsFragment"
+            android:name="com.anesabml.producthunt.ui.posts.PostsFragment"
             android:label="@string/title_posts"
             tools:layout="@layout/fragment_posts">
             <action
@@ -28,12 +28,12 @@
         </fragment>
         <fragment
             android:id="@+id/PostDetailsFragment"
-            android:name="com.anesabml.hunt.ui.postDetails.PostDetailsFragment"
+            android:name="com.anesabml.producthunt.ui.postDetails.PostDetailsFragment"
             android:label="@string/title_details"
             tools:layout="@layout/fragment_post_details">
             <argument
                 android:name="post"
-                app:argType="com.anesabml.hunt.model.Post" />
+                app:argType="com.anesabml.producthunt.model.Post" />
         </fragment>
     </navigation>
 </navigation>

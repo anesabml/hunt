@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.anesabml.hunt">
+    package="com.anesabml.producthunt">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission
         android:name="android.permission.READ_PHONE_STATE"
         tools:node="remove" />
 
     <application
-        android:name="com.anesabml.hunt.MyApp"
+        android:name=".MyApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -18,8 +17,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
+        <service
+            android:name=".MyIntentService"
+            android:exported="false" />
+
         <activity
-            android:name="com.anesabml.hunt.ui.auth.AuthenticationActivity"
+            android:name=".ui.auth.AuthenticationActivity"
             android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -32,8 +35,7 @@
                     android:scheme="auth" />
             </intent-filter>
         </activity>
-
-        <activity android:name="com.anesabml.hunt.ui.main.MainActivity">
+        <activity android:name=".ui.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

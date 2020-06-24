@@ -71,7 +71,6 @@ dependencies {
     implementation(Libraries.COIL)
     implementation(Libraries.CIRCLE_IMAGE_VIEW)
     implementation(Libraries.DAGGER_HILT)
-    implementation("androidx.legacy:legacy-support-v4:1.0.0")
     kapt(Libraries.DAGGER_HILT_COMPLIER)
     implementation(Libraries.DAGGER_HILT_VIEWMODEL)
     implementation(Libraries.DAGGER_HILT_WORKMANGER)
