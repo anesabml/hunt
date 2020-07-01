@@ -38,8 +38,11 @@ class AuthenticationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        val customTabsIntent = CustomTabsIntent.Builder().build()
-        customTabsIntent.launchUrl(this, Uri.parse(Constant.AUTH_API))
+
+        binding.buttonLogin.setOnClickListener {
+            val customTabsIntent = CustomTabsIntent.Builder().build()
+            customTabsIntent.launchUrl(this, Uri.parse(Constant.AUTH_API))
+        }
 
         viewModel.result.observe(this) {
             updateUi(it)

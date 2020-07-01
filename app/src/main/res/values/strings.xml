@@ -18,7 +18,6 @@
 
     <!-- Actions -->
     <string name="button_retry">Retry</string>
-    <string name="button_upvote">Upvote (%d)</string>
     <string name="button_get_it">Get It</string>
 
     <!-- Content description -->

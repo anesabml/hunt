@@ -21,7 +21,6 @@ import com.anesabml.lib.extension.show
 import com.anesabml.lib.extension.showSnackBar
 import com.anesabml.lib.extension.viewBinding
 import com.anesabml.lib.network.Result
-import com.anesabml.producthunt.MyIntentService
 import com.anesabml.producthunt.R
 import com.anesabml.producthunt.databinding.ActivityMainBinding
 import com.anesabml.producthunt.model.User
@@ -60,8 +59,6 @@ class MainActivity : AppCompatActivity() {
         authenticateUser()
 
         setupWorkManager()
-
-        MyIntentService.startActionBaz(this)
     }
 
     private fun setupNavigation() {

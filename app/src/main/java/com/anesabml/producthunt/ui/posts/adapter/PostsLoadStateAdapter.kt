@@ -4,8 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.LoadState
 import androidx.paging.LoadStateAdapter
+import com.anesabml.producthunt.databinding.ItemLoadStateBinding
 import com.anesabml.producthunt.ui.posts.adapter.viewHolder.PostsLoadStateViewHolder
-import com.anesabml.lib.databinding.ItemLoadStateBinding
 
 class PostsLoadStateAdapter(private val retryCallback: () -> Unit) :
     LoadStateAdapter<PostsLoadStateViewHolder>() {
