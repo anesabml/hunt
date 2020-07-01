@@ -1,22 +1,24 @@
-package com.anesabml.producthunt.ui.auth
+package com.anesabml.producthunt.viewModel
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.SavedStateHandle
+import com.anesabml.lib.network.Result
 import com.anesabml.producthunt.CoroutineTestRule
 import com.anesabml.producthunt.data.repository.AuthenticationRepository
 import com.anesabml.producthunt.getOrAwaitValue
-import com.anesabml.producthunt.model.Token
-import com.anesabml.lib.network.Result
-import com.google.common.truth.Truth.assertThat
+import com.anesabml.producthunt.model.User
+import com.anesabml.producthunt.ui.main.MainViewModel
+import com.google.common.truth.Truth
 import io.mockk.clearAllMocks
 import io.mockk.coEvery
+import io.mockk.coVerify
 import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.junit.Rule
 import org.junit.Test
 
 @ExperimentalCoroutinesApi
-class AuthenticationViewModelTest {
+class MainViewModelTest {
 
     @get:Rule
     val coroutineTestRule = CoroutineTestRule()
@@ -24,36 +26,32 @@ class AuthenticationViewModelTest {
     @get:Rule
     val instantExecutorRule = InstantTaskExecutorRule()
 
-    private val mockAuthenticationRepository = mockk<AuthenticationRepository>()
     private val mockSavedStateHandle = mockk<SavedStateHandle>()
+    private val mockAuthenticationRepository = mockk<AuthenticationRepository>()
     private val SUT =
-        AuthenticationViewModel(
+        MainViewModel(
             mockSavedStateHandle,
-            mockAuthenticationRepository,
-            coroutineTestRule.testDispatcherProvider
+            mockAuthenticationRepository
         )
 
     @Test
-    fun handleAuthorizationCode_returnsToken() {
+    fun getCurrentViewer_ShouldPostValue_WhenUserIsReturned() {
         clearAllMocks()
 
         // Given
-        val expectedToken = Token("token", "type")
+        val expectedToken = User("Android developer", "profile image", "Anes")
 
         coEvery {
-            mockAuthenticationRepository.retrieveAccessToken(
-                any(),
-                any(),
-                any()
-            )
+            mockAuthenticationRepository.getCurrentUser()
         } returns Result.Success(expectedToken)
 
         // When
-        SUT.handleAuthorizationCode("")
+        SUT.getCurrentViewer()
 
         // Then
-        val actual = SUT.result.getOrAwaitValue()
+        coVerify { mockAuthenticationRepository.getCurrentUser() }
 
-        assertThat(actual).isEqualTo(Result.Success(expectedToken))
+        val actual = SUT.user.getOrAwaitValue()
+        Truth.assertThat(actual).isEqualTo(Result.Success(expectedToken))
     }
 }

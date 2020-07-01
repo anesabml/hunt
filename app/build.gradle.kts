@@ -102,11 +102,15 @@ dependencies {
     testImplementation(TestingLib.MOCKK)
     testImplementation(TestingLib.ANDROIDX_ARCH_CORE)
     testImplementation(TestingLib.KOTLIN_COROUTINE_TEST)
-    testImplementation(TestingLib.MOCK_WEB_SERVER)
 
+    androidTestImplementation(AndroidTestingLib.JUNIT)
+    androidTestImplementation(AndroidTestingLib.ANDROIDX_TEST_CORE)
     androidTestImplementation(AndroidTestingLib.ANDROIDX_TEST_EXT_JUNIT)
     androidTestImplementation(AndroidTestingLib.ANDROIDX_TEST_RULES)
-    androidTestImplementation(TestingLib.ANDROIDX_ARCH_CORE)
+    androidTestImplementation(AndroidTestingLib.ANDROIDX_ARCH_CORE)
     androidTestImplementation(AndroidTestingLib.ESPRESSO_CORE)
     androidTestImplementation(AndroidTestingLib.WORK_MANAGER)
+    androidTestImplementation(AndroidTestingLib.DAGGER_HILT)
+    kaptAndroidTest(AndroidTestingLib.DAGGER_HILT_COMPLIER)
+    kaptAndroidTest(AndroidTestingLib.DAGGER_HILT_JETPACK_COMPLIER)
 }

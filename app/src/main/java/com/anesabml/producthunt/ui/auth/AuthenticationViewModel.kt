@@ -11,28 +11,24 @@ import com.anesabml.producthunt.model.Token
 import com.anesabml.producthunt.utils.Constant
 import com.anesabml.lib.extension.asLiveData
 import com.anesabml.lib.network.Result
-import com.anesabml.lib.utils.DefaultDispatcherProvider
-import com.anesabml.lib.utils.DispatcherProvider
 import kotlinx.coroutines.launch
 
 class AuthenticationViewModel @ViewModelInject constructor(
     @Assisted private val savedStateHandle: SavedStateHandle,
-    private val authenticationRepository: AuthenticationRepository,
-    private val dispatcherProvider: DispatcherProvider = DefaultDispatcherProvider()
+    private val authenticationRepository: AuthenticationRepository
 ) : ViewModel() {
 
-    private val _result: MutableLiveData<Result<Token>> = MutableLiveData()
-    val result = _result.asLiveData()
+    private val _token: MutableLiveData<Result<Token>> = MutableLiveData()
+    val token = _token.asLiveData()
 
     fun handleAuthorizationCode(code: String) {
-        viewModelScope.launch(dispatcherProvider.io()) {
+        viewModelScope.launch {
             val result = authenticationRepository.retrieveAccessToken(
                 Constant.API_KEY,
                 Constant.API_SECRET,
                 code
             )
-
-            _result.postValue(result)
+            _token.postValue(result)
         }
     }
 }

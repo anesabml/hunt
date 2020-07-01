@@ -1,6 +1,6 @@
 package com.anesabml.producthunt
 
-import com.anesabml.lib.utils.DispatcherProvider
+import com.anesabml.producthunt.utils.DispatcherProvider
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -9,6 +9,7 @@ import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.setMain
 import org.junit.rules.TestWatcher
 import org.junit.runner.Description
+import kotlin.coroutines.CoroutineContext
 
 @ExperimentalCoroutinesApi
 class CoroutineTestRule(val testCoroutineDispatcher: TestCoroutineDispatcher = TestCoroutineDispatcher()) :
@@ -16,10 +17,10 @@ class CoroutineTestRule(val testCoroutineDispatcher: TestCoroutineDispatcher = T
 
     val testDispatcherProvider = object :
         DispatcherProvider {
-        override fun default(): CoroutineDispatcher = testCoroutineDispatcher
-        override fun io(): CoroutineDispatcher = testCoroutineDispatcher
-        override fun main(): CoroutineDispatcher = testCoroutineDispatcher
-        override fun unconfined(): CoroutineDispatcher = testCoroutineDispatcher
+        override fun default(): CoroutineContext = testCoroutineDispatcher
+        override fun io(): CoroutineContext = testCoroutineDispatcher
+        override fun main(): CoroutineContext = testCoroutineDispatcher
+        override fun unconfined(): CoroutineContext = testCoroutineDispatcher
     }
 
     override fun starting(description: Description?) {

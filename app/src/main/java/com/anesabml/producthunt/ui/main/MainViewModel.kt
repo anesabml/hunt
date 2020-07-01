@@ -18,13 +18,13 @@ class MainViewModel @ViewModelInject constructor(
     private val authenticationRepository: AuthenticationRepository
 ) : ViewModel() {
 
-    private val _userResult: MutableLiveData<Result<User>> = MutableLiveData()
-    val userResult = _userResult.asLiveData()
+    private val _user: MutableLiveData<Result<User>> = MutableLiveData()
+    val user = _user.asLiveData()
 
     fun getCurrentViewer() {
         viewModelScope.launch(Dispatchers.IO) {
             val result = authenticationRepository.getCurrentUser()
-            _userResult.postValue(result)
+            _user.postValue(result)
         }
     }
 }

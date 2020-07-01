@@ -1,7 +1,7 @@
 package com.anesabml.producthunt.di
 
-import com.anesabml.lib.utils.DefaultDispatcherProvider
-import com.anesabml.lib.utils.DispatcherProvider
+import com.anesabml.producthunt.utils.DefaultDispatcherProvider
+import com.anesabml.producthunt.utils.DispatcherProvider
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

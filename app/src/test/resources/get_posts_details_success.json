@@ -1,0 +1,317 @@
+{
+  "data": {
+    "post": {
+      "id": "211197",
+      "name": "Draft by Slite",
+      "description": "Draft by Slite turns your new tabs into a distraction-free editor for your quick notes and ideas—no need to be a Slite user. Notes are automatically saved, even if you close your tab. When you’re done, send them to your Slite workspace in one click.",
+      "createdAt": "2020-07-01T07:01:00Z",
+      "featuredAt": "2020-07-01T07:43:35Z",
+      "slug": "draft-by-slite",
+      "tagline": "Turn your Chrome tabs into a sleek editor 📝",
+      "productLinks": [
+        {
+          "type": "Chrome",
+          "url": "https://www.producthunt.com/r/774f15d3163af1?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+PH+API+Explorer+%28ID%3A+9162%29"
+        }
+      ],
+      "thumbnail": {
+        "type": "image",
+        "url": "https://ph-files.imgix.net/9392cd8a-63e4-48c6-a281-c40dc1a762b0.png?auto=format&fit=crop",
+        "videoUrl": null
+      },
+      "media": [
+        {
+          "type": "image",
+          "url": "https://ph-files.imgix.net/83780850-6419-4f4c-bec8-d2b2b1237f73.jpeg?auto=format&fit=crop",
+          "videoUrl": null
+        },
+        {
+          "type": "image",
+          "url": "https://ph-files.imgix.net/759b1574-ef8e-43eb-9a1c-8c464d0ddbec.jpeg?auto=format&fit=crop",
+          "videoUrl": null
+        },
+        {
+          "type": "image",
+          "url": "https://ph-files.imgix.net/9392cd8a-63e4-48c6-a281-c40dc1a762b0.png?auto=format&fit=crop",
+          "videoUrl": null
+        },
+        {
+          "type": "image",
+          "url": "https://ph-files.imgix.net/fe8dbe34-a131-441b-b9fe-af6984c2faff.jpeg?auto=format&fit=crop",
+          "videoUrl": null
+        }
+      ],
+      "isVoted": false,
+      "reviewsRating": 4.4,
+      "reviewsCount": 9,
+      "votesCount": 314,
+      "commentsCount": 44,
+      "isCollected": false,
+      "url": "https://www.producthunt.com/posts/draft-by-slite?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+PH+API+Explorer+%28ID%3A+9162%29",
+      "comments": {
+        "edges": [
+          {
+            "cursor": "MQ==",
+            "node": {
+              "user": {
+                "name": "Juan Gabriel Perez",
+                "profileImage": "https://ph-avatars.imgix.net/1543114/3d0d7e0a-ed4c-4c06-bd37-b9bf337f26bf?auto=format&fit=crop&crop=faces&w=original&h=original",
+                "headline": "Social Media Director at Japan Crate"
+              },
+              "body": "This is amazing~ I've literally been typing notes in the address bar for years.",
+              "createdAt": "2020-07-01T17:05:53Z",
+              "id": "1081213"
+            }
+          },
+          {
+            "cursor": "Mg==",
+            "node": {
+              "user": {
+                "name": "Benjamin Malartic-Ardange",
+                "profileImage": "https://ph-avatars.imgix.net/289164/af67f131-8a6c-4fc2-9ff6-37cc794bb8bc?auto=format&fit=crop&crop=faces&w=original&h=original",
+                "headline": "Entrepreneur. Advisor/EIR @tech startups"
+              },
+              "body": "Keep up the great work guys! ",
+              "createdAt": "2020-07-01T15:45:57Z",
+              "id": "1081121"
+            }
+          },
+          {
+            "cursor": "Mw==",
+            "node": {
+              "user": {
+                "name": "Caleb LeNoir",
+                "profileImage": "https://ph-avatars.imgix.net/150580/original?auto=format&fit=crop&crop=faces&w=original&h=original",
+                "headline": "Team Lead @ CoterieInsurance"
+              },
+              "body": "?makers anyway I could get this for firefox?",
+              "createdAt": "2020-07-01T15:09:18Z",
+              "id": "1081091"
+            }
+          },
+          {
+            "cursor": "NA==",
+            "node": {
+              "user": {
+                "name": "Alex Bouaziz",
+                "profileImage": "https://ph-avatars.imgix.net/21852/original?auto=format&fit=crop&crop=faces&w=original&h=original",
+                "headline": "Deel, MIT, Technion"
+              },
+              "body": "This is amazing! I love it - congrats Slite team!!",
+              "createdAt": "2020-07-01T14:49:48Z",
+              "id": "1081073"
+            }
+          },
+          {
+            "cursor": "NQ==",
+            "node": {
+              "user": {
+                "name": "Rohit Kaul",
+                "profileImage": "https://ph-avatars.imgix.net/1736545/original?auto=format&fit=crop&crop=faces&w=original&h=original",
+                "headline": "Marketer | Maker | Author"
+              },
+              "body": "This looks elegant and is very fast.. wondering why no one has made it till date",
+              "createdAt": "2020-07-01T14:38:29Z",
+              "id": "1081062"
+            }
+          },
+          {
+            "cursor": "Ng==",
+            "node": {
+              "user": {
+                "name": "Bansal",
+                "profileImage": "https://ph-avatars.imgix.net/1694267/d459e7b3-1c05-42e3-bae3-e4b9cf6f2878?auto=format&fit=crop&crop=faces&w=original&h=original",
+                "headline": "Maker of shorthand css framework"
+              },
+              "body": "How it's different from https://www.producthunt.com/posts/tabnotes",
+              "createdAt": "2020-07-01T14:07:21Z",
+              "id": "1081036"
+            }
+          },
+          {
+            "cursor": "Nw==",
+            "node": {
+              "user": {
+                "name": "ryan sneddon",
+                "profileImage": "https://ph-avatars.imgix.net/2280753/e45c8578-f8a2-423b-b2ea-a46389e2e6cb?auto=format&fit=crop&crop=faces&w=original&h=original",
+                "headline": null
+              },
+              "body": "This is really slick. But I use Notion for this sort of note taking. ?makers are you trying to target Notion users (people who have that tab open all the time) or encourage a different group of people to take notes? Because the functionality is almost the exact same. And for what it's worth, I wish every text editor ever used the \"/\" functionality.",
+              "createdAt": "2020-07-01T13:34:43Z",
+              "id": "1080986"
+            }
+          },
+          {
+            "cursor": "OA==",
+            "node": {
+              "user": {
+                "name": "Alexis MICHEL",
+                "profileImage": "https://ph-avatars.imgix.net/533791/original?auto=format&fit=crop&crop=faces&w=original&h=original",
+                "headline": "Marketing Director, Yousign"
+              },
+              "body": "How obvious! I had given up other inferior alternatives to fill the need, so thank you. Very clean and so practical! Kudos to the team!",
+              "createdAt": "2020-07-01T13:18:53Z",
+              "id": "1080974"
+            }
+          },
+          {
+            "cursor": "OQ==",
+            "node": {
+              "user": {
+                "name": "Vincent Off",
+                "profileImage": "https://ph-avatars.imgix.net/2300400/original?auto=format&fit=crop&crop=faces&w=original&h=original",
+                "headline": "Product Manager & Developer @Woleet"
+              },
+              "body": "Great job! I remember using an extension that offered the same thing :)",
+              "createdAt": "2020-07-01T12:49:56Z",
+              "id": "1080935"
+            }
+          },
+          {
+            "cursor": "MTA=",
+            "node": {
+              "user": {
+                "name": "Mitchell Opatowsky",
+                "profileImage": "https://ph-avatars.imgix.net/1901516/original?auto=format&fit=crop&crop=faces&w=original&h=original",
+                "headline": "Cofounder @BUIDLHub"
+              },
+              "body": "Extraordinarily elegant for makers like me! You all could add a sentence saying \"Want to make note-taking even faster, change the extension's shortcut. Just press ⌘D for instant jotting capabilities.\" After doing this, I feel like my note-jotting capability is about to be unimaginable!",
+              "createdAt": "2020-07-01T12:21:31Z",
+              "id": "1080896"
+            }
+          },
+          {
+            "cursor": "MTE=",
+            "node": {
+              "user": {
+                "name": "Barnaby",
+                "profileImage": "https://ph-avatars.imgix.net/66464/original?auto=format&fit=crop&crop=faces&w=original&h=original",
+                "headline": "CTO @ Upflow"
+              },
+              "body": "Awesome, such a great idea!",
+              "createdAt": "2020-07-01T12:13:03Z",
+              "id": "1080865"
+            }
+          },
+          {
+            "cursor": "MTI=",
+            "node": {
+              "user": {
+                "name": "Marta Atencia",
+                "profileImage": "https://ph-avatars.imgix.net/2704562/original?auto=format&fit=crop&crop=faces&w=original&h=original",
+                "headline": "Customer Success at FROGED"
+              },
+              "body": "Since working remotely, I have been using a much older laptop. Chrome is no longer being updated for OS X 10.9, any issues with this? I don't know if this old thing can take an operating system update :')",
+              "createdAt": "2020-07-01T11:51:50Z",
+              "id": "1080848"
+            }
+          },
+          {
+            "cursor": "MTM=",
+            "node": {
+              "user": {
+                "name": "Quentin Nickmans",
+                "profileImage": "https://ph-avatars.imgix.net/6279/original?auto=format&fit=crop&crop=faces&w=original&h=original",
+                "headline": "Cofounder, eFounders"
+              },
+              "body": "I like this - so simple - thanks 🚀",
+              "createdAt": "2020-07-01T11:13:18Z",
+              "id": "1080809"
+            }
+          },
+          {
+            "cursor": "MTQ=",
+            "node": {
+              "user": {
+                "name": "Robin Iss",
+                "profileImage": "https://ph-avatars.imgix.net/2704479/original?auto=format&fit=crop&crop=faces&w=original&h=original",
+                "headline": "Saas Boy"
+              },
+              "body": "Clean & Powerful > kudos to the team 👌",
+              "createdAt": "2020-07-01T10:42:01Z",
+              "id": "1080791"
+            }
+          },
+          {
+            "cursor": "MTU=",
+            "node": {
+              "user": {
+                "name": "Gabriel Birnbaum",
+                "profileImage": "https://ph-avatars.imgix.net/2064298/bff0b343-e3b4-49d6-92ea-2d3d76679c79?auto=format&fit=crop&crop=faces&w=original&h=original",
+                "headline": "Founder @ Barbra – Learning for teams"
+              },
+              "body": "Love it!",
+              "createdAt": "2020-07-01T10:33:50Z",
+              "id": "1080786"
+            }
+          },
+          {
+            "cursor": "MTY=",
+            "node": {
+              "user": {
+                "name": "Edouard Uguen",
+                "profileImage": "https://ph-avatars.imgix.net/935697/original?auto=format&fit=crop&crop=faces&w=original&h=original",
+                "headline": null
+              },
+              "body": "Super helpful extension! Thanks guys 👋🏻",
+              "createdAt": "2020-07-01T09:16:06Z",
+              "id": "1080711"
+            }
+          },
+          {
+            "cursor": "MTc=",
+            "node": {
+              "user": {
+                "name": "Tadas Labudis",
+                "profileImage": "https://ph-avatars.imgix.net/614515/original?auto=format&fit=crop&crop=faces&w=original&h=original",
+                "headline": "CEO & Founder of Prodsight"
+              },
+              "body": "That's an awesome idea! Anything that removes barriers and friction from taking notes is a plus in my book.",
+              "createdAt": "2020-07-01T08:27:20Z",
+              "id": "1080666"
+            }
+          },
+          {
+            "cursor": "MTg=",
+            "node": {
+              "user": {
+                "name": "Suibin",
+                "profileImage": "https://ph-avatars.imgix.net/2386544/original?auto=format&fit=crop&crop=faces&w=original&h=original",
+                "headline": "Indie Maker"
+              },
+              "body": "Good luck with the launch! Btw, we recently started a telegram chat as a way to bring the extension community together, let me know if you'd like to check it out :)",
+              "createdAt": "2020-07-01T08:21:05Z",
+              "id": "1080647"
+            }
+          },
+          {
+            "cursor": "MTk=",
+            "node": {
+              "user": {
+                "name": "Svend Court-Payen",
+                "profileImage": "https://ph-avatars.imgix.net/2289837/original?auto=format&fit=crop&crop=faces&w=original&h=original",
+                "headline": null
+              },
+              "body": "Light and handy - congrats guys 👏",
+              "createdAt": "2020-07-01T08:19:07Z",
+              "id": "1080643"
+            }
+          },
+          {
+            "cursor": "MjA=",
+            "node": {
+              "user": {
+                "name": "Anna Amelina",
+                "profileImage": "https://ph-avatars.imgix.net/2362865/original?auto=format&fit=crop&crop=faces&w=original&h=original",
+                "headline": "Internet Marketing Manager"
+              },
+              "body": "Finally someone decided to make such thing! Thank you guys so much!",
+              "createdAt": "2020-07-01T07:53:29Z",
+              "id": "1080603"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

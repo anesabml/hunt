@@ -100,7 +100,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun observeResult() {
-        viewModel.userResult.observe(this) {
+        viewModel.user.observe(this) {
             updateUI(it)
         }
     }

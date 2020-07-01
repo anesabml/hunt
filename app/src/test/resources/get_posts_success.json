@@ -1,0 +1,42 @@
+{
+  "data": {
+    "posts": {
+      "edges": [
+        {
+          "cursor": "MQ==",
+          "node": {
+            "id": "211197",
+            "name": "Draft by Slite",
+            "tagline": "Turn your Chrome tabs into a sleek editor 📝",
+            "createdAt": "2020-07-01T07:01:00Z",
+            "featuredAt": "2020-07-01T07:43:35Z",
+            "thumbnail": {
+              "type": "image",
+              "url": "https://ph-files.imgix.net/9392cd8a-63e4-48c6-a281-c40dc1a762b0.png?auto=format&fit=crop",
+              "videoUrl": null
+            },
+            "votesCount": 314,
+            "isVoted": false
+          }
+        },
+        {
+          "cursor": "Mg==",
+          "node": {
+            "id": "210520",
+            "name": "Free illustrations",
+            "tagline": "List of free to use illustrations & vectors",
+            "createdAt": "2020-06-28T18:51:02Z",
+            "featuredAt": "2020-07-01T09:59:17Z",
+            "thumbnail": {
+              "type": "image",
+              "url": "https://ph-files.imgix.net/0c736ffc-1032-4322-bc39-d625c26c8102.png?auto=format&fit=crop",
+              "videoUrl": null
+            },
+            "votesCount": 180,
+            "isVoted": false
+          }
+        }
+      ]
+    }
+  }
+}

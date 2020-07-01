@@ -44,7 +44,7 @@ class AuthenticationActivity : AppCompatActivity() {
             customTabsIntent.launchUrl(this, Uri.parse(Constant.AUTH_API))
         }
 
-        viewModel.result.observe(this) {
+        viewModel.token.observe(this) {
             updateUi(it)
         }
     }

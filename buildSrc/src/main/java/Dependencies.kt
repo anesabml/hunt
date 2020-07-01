@@ -133,19 +133,24 @@ object TestingLib {
     const val MOCKK = "io.mockk:mockk:${Versions.MOCKK}"
     const val KOTLIN_COROUTINE_TEST =
         "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.KOTLIN_COROUTINES}"
-    const val PAGING = "androidx.paging:paging-common:${Versions.PAGING}"
 
     // Test helpers for LiveData
     const val ANDROIDX_ARCH_CORE = "androidx.arch.core:core-testing:${Versions.ANDROIDX_ARCH_CORE}"
-
-    const val MOCK_WEB_SERVER = "com.squareup.okhttp3:mockwebserver:${Versions.MOCK_WEB_SERVER}"
 }
 
 object AndroidTestingLib {
+    const val JUNIT = "junit:junit:${Versions.JUNIT}"
     const val ANDROIDX_TEST_CORE = "androidx.test:core-ktx:${Versions.ANDROIDX_TEST}"
     const val ANDROIDX_TEST_RULES = "androidx.test:rules:${Versions.ANDROIDX_TEST}"
     const val ANDROIDX_TEST_RUNNER = "androidx.test:runner:${Versions.ANDROIDX_TEST}"
     const val ANDROIDX_TEST_EXT_JUNIT = "androidx.test.ext:junit-ktx:${Versions.ANDROIDX_TEST_EXT}"
     const val ESPRESSO_CORE = "androidx.test.espresso:espresso-core:${Versions.ESPRESSO_CORE}"
     const val WORK_MANAGER = "androidx.work:work-testing:${Versions.WORK_MANAGER}"
+
+    // Test helpers for LiveData
+    const val ANDROIDX_ARCH_CORE = "androidx.arch.core:core-testing:${Versions.ANDROIDX_ARCH_CORE}"
+
+    const val DAGGER_HILT = "com.google.dagger:hilt-android-testing:${Versions.DAGGER_HILT}"
+    const val DAGGER_HILT_COMPLIER = "com.google.dagger:hilt-android-compiler:${Versions.DAGGER_HILT}"
+    const val DAGGER_HILT_JETPACK_COMPLIER = "androidx.hilt:hilt-compiler:${Versions.DAGGER_HILT_JETPACK}"
 }
