@@ -41,7 +41,7 @@ object Versions {
 }
 
 object BuildPluginsVersion {
-    const val AGP = "4.0.0"
+    const val AGP = "4.0.1"
     const val KOTLIN = "1.3.72"
     const val KTLINT = "9.2.1"
     const val VERSIONS_PLUGIN = "0.28.0"
@@ -75,8 +75,6 @@ object Libraries {
     const val LIFECYCLE_COMMON_JAVA_8 =
         "androidx.lifecycle:lifecycle-common-java8:${Versions.LIFECYCLE}"
 
-    const val KOTLIN_COROUTINES_CORE =
-        "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.KOTLIN_COROUTINES}"
     const val KOTLIN_COROUTINES_ANDROID =
         "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.KOTLIN_COROUTINES}"
 

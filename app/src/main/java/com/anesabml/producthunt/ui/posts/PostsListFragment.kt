@@ -8,12 +8,12 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
+import com.anesabml.lib.extension.viewBinding
 import com.anesabml.producthunt.R
 import com.anesabml.producthunt.databinding.FragmentPostsListBinding
 import com.anesabml.producthunt.model.Post
 import com.anesabml.producthunt.ui.posts.adapter.PostsListRecyclerViewAdapter
 import com.anesabml.producthunt.ui.posts.adapter.PostsLoadStateAdapter
-import com.anesabml.lib.extension.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -41,16 +41,9 @@ class PostsListFragment : Fragment(R.layout.fragment_posts_list), PostsListInter
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        _adapter = PostsListRecyclerViewAdapter(this@PostsListFragment)
-        _adapter.withLoadStateFooter(PostsLoadStateAdapter(_adapter::retry))
 
-        // Setup the RecyclerView
-        binding.postsRecyclerView.adapter = _adapter
-
-        // Setup the SwipeRefresh callback
-        binding.swipeRefresh.setOnRefreshListener {
-            _adapter.refresh()
-        }
+        setupRecyclerView()
+        setupSwipeRefresh()
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.postsPagingFlow.collectLatest { pagingData ->
@@ -62,6 +55,26 @@ class PostsListFragment : Fragment(R.layout.fragment_posts_list), PostsListInter
             _adapter.loadStateFlow.collectLatest { loadState ->
                 binding.swipeRefresh.isRefreshing = loadState.refresh is LoadState.Loading
             }
+        }
+    }
+
+    private fun setupRecyclerView() {
+        _adapter = PostsListRecyclerViewAdapter(this@PostsListFragment)
+        _adapter.withLoadStateFooter(PostsLoadStateAdapter(_adapter::retry))
+
+        binding.postsRecyclerView.adapter = _adapter
+
+        postponeEnterTransition()
+        binding.postsRecyclerView.viewTreeObserver.addOnPreDrawListener {
+            startPostponedEnterTransition()
+            true
+        }
+
+    }
+
+    private fun setupSwipeRefresh() {
+        binding.swipeRefresh.setOnRefreshListener {
+            _adapter.refresh()
         }
     }
 

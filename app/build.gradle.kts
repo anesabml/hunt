@@ -6,11 +6,14 @@ plugins {
     kotlin("kapt")
     id("androidx.navigation.safeargs.kotlin")
     id("dagger.hilt.android.plugin")
-    id("kotlin-android")
 }
 
 apollo {
     generateKotlinModels.set(true)
+}
+
+kapt {
+    correctErrorTypes = true
 }
 
 android {
@@ -80,7 +83,6 @@ dependencies {
     implementation(Libraries.LIFECYCLE_LIVEDATA)
     implementation(Libraries.LIFECYCLE_VIEWMODEL)
     implementation(Libraries.LIFECYCLE_VIEWMODEL_SAVEDSTATE)
-    implementation(Libraries.KOTLIN_COROUTINES_CORE)
     implementation(Libraries.KOTLIN_COROUTINES_ANDROID)
     implementation(Libraries.OKHTTP)
     implementation(Libraries.OKHTTP_LOGGING_INTERCEPTOR)
